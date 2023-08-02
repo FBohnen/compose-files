@@ -1,2 +1,2 @@
 # compose-files
-Examples for omv6-compose plugin
+Examples for compose-plugin by ryecoaaron
