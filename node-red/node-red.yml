@@ -9,7 +9,7 @@ services:
     networks:
       - node-red-net
     volumes:
-      - path to node-red-data:/data
+      - /path to node-red-data:/data
 
 volumes:
   node-red-data:
