@@ -1,6 +1,6 @@
 version: '3.7'
 x-backend: &backend
-  image: papermerge/papermerge:latest
+  image: papermerge/papermerge:2.1.9
   volumes:
     - CHANGE_TO_COMPOSE_DATA_PATH/media_root:/app/media
     - CHANGE_TO_COMPOSE_DATA_PATH/xapian_index:/app/xapian_index
@@ -27,7 +27,7 @@ services:
     ports:
       - '16000:8000'
   db:
-    image: postgres:latest
+    image: postgres:14.4
     volumes:
       - CHANGE_TO_COMPOSE_DATA_PATH/postgres_data:/var/lib/postgresql/data/
     environment:
@@ -35,7 +35,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
   redis:
-    image: 'redis:latest'
+    image: 'redis:6'
     ports:
       - '6379:6379'
     volumes:
